@@ -9,7 +9,7 @@
 This repository contains code examples as a starting point for new computer vision projects. 
 All frameworks, libraries and data sets are open source and publicly available.
 
-## Docker containers to create a reproducible environment ##
+## Docker container to create a reproducible environment ##
 
 The included docker file can be used to create a reproducible environment in a docker 
 container with all required dependencies installed.
