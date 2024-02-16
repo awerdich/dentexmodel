@@ -13,7 +13,9 @@ services:
     environment:
     #- AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
     #- AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    
     - NVIDIA_VISIBLE_DEVICES=all
+    - VERSION=$(git describe --tags --dirty --always)
     - HOME=/app
     ports:
       - "8888:8888"
