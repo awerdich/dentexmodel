@@ -42,7 +42,12 @@ COPY src/dentexmodel/__init__.py src/dentexmodel/__init__.py
 
 # Install dependencies into system python
 COPY Pipfile Pipfile.lock ./
-RUN pipenv install --system --deploy --ignore-pipfile --dev
+# RUN pipenv install --system --deploy --ignore-pipfile --dev
+# This allows the version to be inferred properly form inside the container 
+# without copying the entire .git folder 
+RUN --mount=source=.git,target=.git,type=bind \
+    pipenv install --system --deploy --ignore-pipfile --dev
+
 
 # Build Detectron2 from source
 RUN python3 -m pip install 'git+https://github.com/facebookresearch/detectron2.git'

@@ -46,7 +46,13 @@ def crop_image(image, box):
 
 
 def is_image(image_file_path):
-    """ Use the PIL package to check if file is an image """
+    """
+    Checks if the given file path corresponds to an image file.
+    Parameters:
+        image_file_path (str): The path to the file.
+    Returns:
+        bool: True if the file is an image, False otherwise.
+    """
     file_is_image = False
     if os.path.exists(image_file_path):
         try:
