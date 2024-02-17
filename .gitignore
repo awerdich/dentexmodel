@@ -54,3 +54,6 @@ MANIFEST
 .conda*/
 .python-version
 .env
+
+# Data sets
+data/
