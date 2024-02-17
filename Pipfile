@@ -4,8 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-setuptools = "*"
-setuptools-scm = "*"
+dentexmodel = {file = ".", editable = true}
 tox = "*"
 cython = "*"
 pyscaffold = "*"
@@ -19,7 +18,6 @@ tqdm = "*"
 albumentations = "*"
 lightning = "*"
 tensorflow = "*"
-dentexmodel = {file = ".", editable = true}
 grad-cam = "*"
 
 [dev-packages]
@@ -27,7 +25,6 @@ jupyterlab = "*"
 ipywidgets = "*"
 matplotlib = "*"
 seaborn = "*"
-dentexmodel = {file = ".", editable = true}
 
 [requires]
 python_version = "3.10"
