@@ -1,5 +1,5 @@
 """
-Tools specific for the Dentex Challenge data
+Tools for working with the Dentex Challenge data
 Andreas Werdich
 Center for Computational Biomedicine
 """
@@ -43,8 +43,8 @@ def val_test_split(data, label_col=None, n_test_per_class=30, n_val_per_class=30
                 dset_df.loc[dset_df.index.isin(idx_list), 'dataset'] = dataset
         else:
             np.random.seed(random_state)
-            idx_list = np.random.choice(dset_df. \
-                                        loc[dset_df['dataset'].isnull()].\
+            idx_list = np.random.choice(dset_df.
+                                        loc[dset_df['dataset'].isnull()].
                                         index, size=image_numbers.get(dataset), replace=False)
             dset_df.loc[dset_df.index.isin(idx_list), 'dataset'] = dataset
 
