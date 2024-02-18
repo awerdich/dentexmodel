@@ -5,9 +5,6 @@
 requires = ["setuptools>=64", "setuptools_scm[toml]>=8"]
 build-backend = "setuptools.build_meta"
 
-[project]
-# version = "0.0.1"  # Remove any existing version parameter.
-dynamic = ["version"]
 
 [tool.setuptools_scm]
 # For smarter version schemes and other configuration options,
