@@ -15,7 +15,11 @@ ENV \
     NO_COLOR=true \
     PIPENV_NOSPIN=true
 
+# Port for JupyterLab server
 EXPOSE 8888
+# Port for TensorBoard server
+EXPOSE 6006
+
 RUN mkdir -p /app
 WORKDIR /app
 
