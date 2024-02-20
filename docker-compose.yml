@@ -20,3 +20,22 @@ services:
     volumes:
       - .:/app
       - ./data:/app/data
+      - ./data/model:/app/data/model
+
+  tf:
+    image: tensorflow/tensorflow:2.15.0.post1
+    container_name: tensorflow
+    runtime: nvidia
+    environment:
+    - NVIDIA_VISIBLE_DEVICES=all
+    ports:
+      - "6006:6006"
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./data/model:/app/data/model
+    entrypoint: 
+      - /app/bash_scripts/tf_entry.sh
+    #restart: always
+    #depends_on:
+    #  - app

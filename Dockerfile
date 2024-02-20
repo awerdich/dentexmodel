@@ -15,7 +15,9 @@ ENV \
     NO_COLOR=true \
     PIPENV_NOSPIN=true
 
+# Port for JupyterLab server
 EXPOSE 8888
+
 RUN mkdir -p /app
 WORKDIR /app
 
@@ -31,6 +33,8 @@ RUN apt-get update -y && \
     'libxext6' \
     'ninja-build'
 
+# Create a symbolic link for python
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 # Pip and pipenv
 RUN pip install --upgrade pip
@@ -48,9 +52,9 @@ COPY Pipfile Pipfile.lock ./
 RUN --mount=source=.git,target=.git,type=bind \
     pipenv install --system --deploy --ignore-pipfile --dev
 
-
-# Build Detectron2 from source
-RUN python3 -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
+# Install dependencies from setup.cfg (ignored py pipenv system installs) 
+RUN python -m pip install setuptools setuptools-scm torch torchvision torchaudio
+RUN python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 
 # Run the jupyter lab server
 CMD ["/bin/bash", "/app/bash_scripts/docker_entry.sh"]
