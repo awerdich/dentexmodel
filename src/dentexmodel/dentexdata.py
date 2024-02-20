@@ -86,11 +86,21 @@ class DentexData:
             logger.warning('No annotations. Run "load_annotations" method first.')
         return category_dict
 
-    def download_image_data(self, url=None):
-        if url is None:
-            url = self.classification_url
+    def download_image_data(self, url):
+        """
+        Downloads image data from a specified URL
+        Parameters:
+        - url (str): The URL from which to download the image data.
+        If not provided, the method will use the default classification URL.
+        Returns:
+        - data_tar_file (str): The path to the downloaded data TAR file.
+        Raises:
+        - ValueError: If an incomplete file exists at the specified URL.
+        Example usage:
+        download_image_data(url='https://www.example.com/data.tar')
+        """
+        url_size = FileOP().file_size_from_url(url)
         data_tar_file = FileOP().download_from_url(url=url, download_dir=self.data_dir)
-
         if data_tar_file is not None and os.path.exists(data_tar_file):
             try:
                 with tarfile.open(data_tar_file) as tar:
