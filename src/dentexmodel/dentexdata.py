@@ -99,7 +99,6 @@ class DentexData:
         Example usage:
         download_image_data(url='https://www.example.com/data.tar')
         """
-        url_size = FileOP().file_size_from_url(url)
         data_tar_file = FileOP().download_from_url(url=url, download_dir=self.data_dir)
         if data_tar_file is not None and os.path.exists(data_tar_file):
             try:
