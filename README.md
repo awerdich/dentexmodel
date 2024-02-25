@@ -34,7 +34,7 @@ well-suited for training and evaluating custom models.
 Here's a step-by-step guide on how to use this setup:
 
 1. Install [Docker](https://docs.docker.com/) on your machine.
-2. Clone the GitHub project repository to download the contents of the repository to your machine:
+2. Clone the GitHub project repository to download the contents of the repository:
 ```bash
 git clone git@github.com:ccb-hms/computervision.git
 ```
