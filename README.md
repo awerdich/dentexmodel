@@ -3,13 +3,17 @@
     <img style="vertical-align: top" src="./images/train_195_boxes.png" width="40%" />
 </p>
 
-# The CCB Computer Vision Code Repository #
+## The CCB Computer Vision Code Repository #
 
-This repository provides template code for some common computer vision tasks:
+This repository contains template code that that can be used as 
+a starting point for computer vision projects. 
+All frameworks, libraries and data sets are open source and publicly available.
+Some common tasks that are demonstrated in this repository include:
 
 - [Image classification](#image-classification)
 - [Object detection](#object-detection)
 - [Instance segmentation](#instance-segmentation)
+- [Gradient-weighted Class Activation Mapping](#grad-cam)
 
 ## Install locally with Docker
 The most convenient way to get started with this repository is to run the 
@@ -85,3 +89,47 @@ pipenv install -e . --dev
 # Run jupyter lab
 pipenv run jupyter lab
 ```
+
+## Label Studio
+
+<img src="https://user-images.githubusercontent.com/12534576/192582340-4c9e4401-1fe6-4dbb-95bb-fdbba5493f61.png"/>
+
+Label Studio is an open-source data labeling tool for labeling, annotating, 
+and exploring many different data types. 
+Additionally, the tool includes a powerful machine learning interface that can be used for new model training, 
+active learning, supervised learning, and many other training techniques.
+
+1. Multi-type annotations: Label Studio supports multiple types of annotations, including labeling for audio, video, images, text, and time series data. These annotations can be used for tasks such as object detection, semantic segmentation, and text classification among others.
+2. Customizable: You can customize the labeling interface to suit your needs by using the simple configuration system provided by Label Studio.
+3. Machine Learning backend: Label Studio allows integration with machine learning models. You can pre-label data using model predictions and then manually adjust the results.
+4. Data Import and Export: Label Studio supports various data sources for import and export. You can import data from Amazon S3, Google Cloud Storage, or a local file system, and export it in popular formats like COCO, Pascal VOC, or YOLO.
+5. Collaboration: It supports multiple users, making it suitable for collaborative projects.
+6. Scalability: Label Studio can be deployed in any environment, be it on a local machine or in a distributed setting, making it a scalable solution.
+
+### How to Use Label Studio
+
+The tool is included in this repository as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+When you clone the main project by default the directory that contains the submodule is included,
+but none of the files within them yet:
+```bash
+# Cone the main project if not done already
+git clone git@github.com:ccb-hms/computervision.git
+# CD into the computervision/label-studio directory 
+cd computervision/label-studio
+# Download the latest version 
+git submodule init
+git submodule update
+```
+Label studio can be run conveniently in a docker container. The process is the same as
+described above for the main repository.
+```bash
+# CD into the computervision/label-studio directory 
+cd computervision/label-studio
+# Create the Label Studio image 
+docker compose build
+# Run the Label Studio server
+docker compose up
+```
+Once installed, open a web browser and go to localhost:8080 to access the Label Studio server.
+For more detailed installation instructions, 
+see the [installation instructions](https://labelstud.io/guide/install).
