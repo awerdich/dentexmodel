@@ -107,10 +107,10 @@ active learning, supervised learning, and many other training techniques.
 ### How to Use Label Studio
 
 The tool is included in this repository as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
-When you clone the main project by default the directory that contains the submodule is included,
-but none of the files within them yet:
+When you clone the main project, by default the directory that contains the submodule is included,
+but without the files. Those can be installed when needed:
 ```bash
-# Cone the main project if not done already
+# Clone the main project if not already done
 git clone git@github.com:ccb-hms/computervision.git
 # CD into the computervision/label-studio directory 
 cd computervision/label-studio
@@ -118,7 +118,7 @@ cd computervision/label-studio
 git submodule init
 git submodule update
 ```
-Label studio can be run conveniently in a docker container. The process is the same as
+Label studio can be run as a server application in a docker container. The process is the same as
 described above for the main repository.
 ```bash
 # CD into the computervision/label-studio directory 
