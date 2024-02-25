@@ -134,7 +134,7 @@ class FileOP:
                         if delete_after_extract:
                             os.unlink(output_file)
                             logger.info(f'Deleted compressed file {output_file}')
-                elif xt in ['.json', '.csv', '.pickle', '.parquet', '.ckpt']:
+                elif xt in ['.json', '.csv', '.pickle', '.parquet', '.ckpt', '.pth']:
                     print(f'Created {xt} file.')
                 else:
                     print(f'File: {xt} loaded.')
