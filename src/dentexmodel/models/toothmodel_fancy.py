@@ -69,7 +69,6 @@ class FineTuneLearningRateFinder(LearningRateFinder):
     """
     FineTuneLearningRateFinder is a class that extends the LearningRateFinder class.
     It is used to find the optimal learning rate for fine-tuning a model during training.
-
     Attributes:
         milestones (List[int]): A list of epoch numbers at which the learning rate should be evaluated.
     """

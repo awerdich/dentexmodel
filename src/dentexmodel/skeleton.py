@@ -9,7 +9,7 @@ console script. To run this script uncomment the following lines in the
 Then run ``pip install .`` (or ``pip install -e .`` for editable mode)
 which will install the command ``fibonacci`` inside your current environment.
 
-Besides console scripts, the header (i.e. until ``_logger``...) of this file can
+Besides console script, the header (i.e. until ``_logger``...) of this file can
 also be used as template for Python modules.
 
 Note:
@@ -35,7 +35,7 @@ _logger = logging.getLogger(__name__)
 
 # ---- Python API ----
 # The functions defined in this section can be imported by users in their
-# Python scripts/interactive interpreter, e.g. via
+# Python script/interactive interpreter, e.g. via
 # `from dentexmodel.skeleton import fib`,
 # when using this Python module as a library.
 
@@ -130,7 +130,7 @@ def main(args):
 def run():
     """Calls :func:`main` passing the CLI arguments extracted from :obj:`sys.argv`
 
-    This function can be used as entry point to create console scripts with setuptools.
+    This function can be used as entry point to create console script with setuptools.
     """
     main(sys.argv[1:])
 
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     #    https://docs.python.org/3/library/__main__.html
 
     # After installing your project with pip, users can also run your Python
-    # modules as scripts via the ``-m`` flag, as defined in PEP 338::
+    # modules as script via the ``-m`` flag, as defined in PEP 338::
     #
     #     python -m dentexmodel.skeleton 42
     #

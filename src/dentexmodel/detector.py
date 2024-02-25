@@ -9,11 +9,10 @@ import datetime
 import logging
 import torch
 import numpy as np
-from detectron2.config import get_cfg
 from detectron2.data import build_detection_test_loader, DatasetMapper
 from detectron2.evaluation import COCOEvaluator
 from detectron2.utils import comm
-from detectron2.engine import HookBase, DefaultTrainer, DefaultPredictor
+from detectron2.engine import HookBase, DefaultTrainer
 from detectron2.utils.logger import log_every_n_seconds
 
 logger = logging.getLogger(name=__name__)
@@ -77,42 +76,6 @@ class Trainer(DefaultTrainer):
                                       model=self.model,
                                       data_loader=data_loader))
         return hooks
-
-
-class Predictor:
-    """
-    Predictor class
-    This class is used to create a predictor object for performing object detection tasks using a pre-trained model.
-    Parameters:
-    - config_file (str): Path to the configuration file for the model.
-    - checkpoint_file (str): Path to the checkpoint file for the model.
-    - thing_classes (tuple, optional): Tuple of class labels for the objects you want to detect. Defaults to ('tooth',).
-    - pad_pixels (int, optional): Number of pixels to pad the input image. Defaults to 2000.
-    - cpu_inference (bool, optional): Whether to perform inference on CPU. Defaults to False.
-    Methods:
-    - get_predictor(): Creates a predictor object from the checkpoint file.
-    """
-
-    def __init__(self,
-                 config_file,
-                 checkpoint_file,
-                 thing_classes=('tooth',),
-                 pad_pixels=2000,
-                 cpu_inference=False):
-        self.config_file = config_file if file_assert(config_file) else None
-        self.checkpoint_file = checkpoint_file if file_assert(checkpoint_file) else None
-        self.pad_pixels = pad_pixels
-        self.thing_classes = thing_classes
-        self.cpu_inference = cpu_inference
-
-    def get_predictor(self):
-        """ Create predictor object from checkpoint """
-        cfg = get_cfg()
-        cfg.merge_from_file(self.config_file)
-        cfg.MODEL.WEIGHTS = self.checkpoint_file
-        if self.cpu_inference:
-            cfg.MODEL.DEVICE = 'cpu'
-        return DefaultPredictor(cfg)
 
 
 class LossEvalHook(HookBase):

@@ -15,7 +15,7 @@ Why does this file exist, and why not put this in __main__?
   Also see (1) from http://click.pocoo.org/5/setuptools/#setuptools-integration
 """
 import argparse
-from dentexmodel.scripts.create_dentex import main as create_dentex
+# from dentexmodel.script.create_dentex import main as create_dentex
 
 parser = argparse.ArgumentParser(description='PyTorch Workflow')
 
@@ -26,5 +26,5 @@ parser = argparse.ArgumentParser(description='PyTorch Workflow')
 def main(args=None):
     # We will add command line argument later.
     args = parser.parse_args(args=args)
-    create_dentex()
+    #create_dentex()
     print(f'Finished creating the Dentex data sets.')

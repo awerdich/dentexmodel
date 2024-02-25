@@ -19,6 +19,7 @@ lightning = "*"
 grad-cam = "*"
 tensorflow = "==2.15"
 dentexmodel = {file = ".", editable = true}
+python-dotenv = "*"
 
 [dev-packages]
 jupyterlab = "*"
