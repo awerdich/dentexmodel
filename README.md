@@ -34,7 +34,7 @@ Here's a step-by-step guide on how to use this setup:
 ```bash
 git clone git@github.com:ccb-hms/computervision.git
 ```
-3. Navigate to the repository's directory: `cd computervision` to change your current directory to the repository's 
+3. Navigate to the repository's directory: Use `cd computervision` to change your current directory to the repository's 
 directory.
 4. Build the Docker image. Use the command `docker compose build` to build a Docker image from the 
 Dockerfile in the current directory. This image will include all the specifications from the Dockerfile, 
@@ -75,9 +75,9 @@ associated with the typical workflow using pip, virtualenv, and the good old req
 It combines the functionalities of pip and virtualenv into one tool, 
 providing a smooth and convenient workflow for developers.
 
-With Pipenv, you can manage project dependencies and the virtual environment easily. 
-It uses a Pipfile and Pipfile.lock to keep track of project dependencies, 
-similar to how package.json works in Node.js projects or Gemfile in Ruby.
+With Pipenv, project dependencies and the virtual environment can be managed easily. 
+It uses a Pipfile and Pipfile.lock to keep track of project dependencies with 
+package versions, similar to how package.json works in Node.js projects or Gemfile in Ruby.
 
 ```bash
 # Create a pipenv environment with all dependencies
