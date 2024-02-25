@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  app:
+    image: dentexmodel:01
+    container_name: dentexmodel
+    build: 
+      context: .
+      network: host
+      dockerfile: ./Dockerfile
+      args:
+        - DEV_dentexmodel=1
+    environment:
+    #- AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+    #- AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    - HOME=/app
+    - DATA_ROOT=/app/data
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./data/model:/app/data/model
+
+  tf:
+    image: tensorflow/tensorflow:2.15.0.post1
+    container_name: tensorflow
+    ports:
+      - "6006:6006"
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./data/model:/app/data/model
+    entrypoint: 
+      - /app/bash_scripts/tf_entry.sh
+    #restart: always
+    #depends_on:
+    #  - app
