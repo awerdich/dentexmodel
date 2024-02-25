@@ -8,11 +8,11 @@
 This repository contains template code that that can be used as 
 a starting point for computer vision projects. 
 All frameworks, libraries and data sets are open source and publicly available.
-Some common tasks that are demonstrated in this repository include:
+Some common tasks included here are:
 
-- [Image classification](#image-classification)
-- [Object detection](#object-detection)
-- [Instance segmentation](#instance-segmentation)
+- [Image Classification](#image-classification)
+- [Object Detection](#object-detection)
+- [Instance Segmentation](#instance-segmentation)
 - [Gradient-weighted Class Activation Mapping](#grad-cam)
 
 ## Install locally with Docker
@@ -89,8 +89,6 @@ pipenv install -e . --dev
 # Run jupyter lab
 pipenv run jupyter lab
 ```
-
-## Label Studio
 
 <img src="https://user-images.githubusercontent.com/12534576/192582340-4c9e4401-1fe6-4dbb-95bb-fdbba5493f61.png"/>
 
