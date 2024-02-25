@@ -15,6 +15,7 @@ services:
     #- AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     - NVIDIA_VISIBLE_DEVICES=all
     - HOME=/app
+    - DATA_ROOT=/app/data
     ports:
       - "8888:8888"
     volumes:
