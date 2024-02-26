@@ -1,0 +1,56 @@
+<View>
+  <Image name="image" value="$image" maxWidth="750px"/>
+<View style="display: flex;">
+	<Header size="5" value="Diagnostic Quality" style="font-weight:lighter;color:blue" />
+	<Choices name="quality" toName="image"
+             choice="single"
+             showInline="true"
+             required="true"
+             requiredMessage="Select Diagnostic Quality">
+    	<Choice value="yes"/>
+      	<Choice value="no"/>
+    </Choices>
+  <Header size="5" value="Bounding Box" style="font-weight:lighter;color:blue" />
+  <Choices name="bbox" toName="image"
+           choice="single"
+           showInline="true"
+           required="true"
+           requiredMessage="Select Bounding Box">
+		<Choice value="whole"/>
+      	<Choice value="partial"/>
+		<Choice value="implant"/>
+		<Choice value="off-tooth"/>
+	</Choices>
+	<Header size="5" value="Position" style="font-weight:lighter;color:blue" />
+ 	<Number name="tooth_number"
+            toName="image"
+            min="1"
+            max="32"
+            hotkey="+"
+            required="true" />
+	</View>
+  	<View style="display: flex;">
+	<Choices name="disease" toName="image"
+             choice="single" showInline="true" required="false">
+		<Choice value="healthy"/>
+      	<Choice value="stable"/>
+		<Choice value="unstable"/>
+		<Choice value="very unstable"/>
+    </Choices>
+  	</View>
+	<View style="display: flex;">
+	<Header size="10" value="Probing" style="font-weight:lighter;color:black" />
+  	<Text name="t1" value="1" />
+   	<Number name="depth_1" toName="image" min="0" max="10" required="false" />
+  	<Text name="t2" value="2" />
+   	<Number name="depth_2" toName="image" min="0" max="10" required="false" />
+  	<Text name="t3" value="3" />
+   	<Number name="depth_3" toName="image" min="0" max="10" required="false" />
+  	<Text name="t4" value="4" />
+   	<Number name="depth_4" toName="image" min="0" max="10" required="false" />
+  	<Text name="t5" value="5" />
+   	<Number name="depth_5" toName="image" min="0" max="10" required="false" />
+  	<Text name="t6" value="6" />
+   	<Number name="depth_6" toName="image" min="0" max="10" required="false" />
+  </View>
+</View>

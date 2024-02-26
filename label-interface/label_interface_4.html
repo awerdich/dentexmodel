@@ -1,0 +1,104 @@
+<View>
+<Style>
+.tooth_cols {	background: lightblue;
+  				font-weight: lighter;
+  				font-family: monospace, monospace;
+  				border: 1px solid black;
+  				color: blue;
+  				max-width: 1048px;
+  				justify-content: space-evenly;
+  				text-align: left;
+  				align-items: left;
+  				flex-wrap: wrap; }
+</Style>
+<Image name="image" value="$image" maxHeight="700px" zoomControl="true" zoomBy="1.1" />
+<View style="display: flex;">
+	<Header size="5" value="Diagnostic Quality (use for model)" style="font-weight:lighter;color:blue" />
+	<Choices name="quality" toName="image"
+             choice="single"
+             showInline="true"
+             required="true"
+             requiredMessage="Select Diagnostic Quality">
+    	<Choice value="yes"/>
+      	<Choice value="no"/>
+	</Choices>
+  <Header size="5" value="Bounding Box" style="font-weight:lighter;color:blue" />
+  <Choices name="bbox" toName="image"
+           choice="single"
+           showInline="true"
+           required="true"
+           requiredMessage="Select Bounding Box">
+		<Choice value="whole"/>
+      	<Choice value="partial"/>
+		<Choice value="implant"/>
+		<Choice value="off-tooth"/>
+	</Choices>
+  	</View>
+    <Choices name="pos" toName="image"
+             showInline="true"
+             required="true"
+             requiredMessage="Select Position">
+    <View className="tooth_cols">
+    <Choice value="01" hotkey=" "/>
+    <Choice value="02" hotkey=" "/>
+    <Choice value="03" hotkey=" "/>
+    <Choice value="04" hotkey=" "/>
+    <Choice value="05" hotkey=" "/>
+    <Choice value="06" hotkey=" "/>
+    <Choice value="07" hotkey=" "/>
+    <Choice value="08" hotkey=" "/>
+    <Choice value="09" hotkey=" "/>
+    <Choice value="10" hotkey=" "/>
+    <Choice value="11" hotkey=" "/>
+    <Choice value="12" hotkey=" "/>
+    <Choice value="13" hotkey=" "/>
+    <Choice value="14" hotkey=" "/>
+    <Choice value="15" hotkey=" "/>
+    <Choice value="16" hotkey=" "/>
+  	</View>
+    <View className="tooth_cols">
+    <Choice value="32" hotkey=" "/>
+    <Choice value="31" hotkey=" "/>
+    <Choice value="30" hotkey=" "/>
+    <Choice value="29" hotkey=" "/>
+    <Choice value="28" hotkey=" "/>
+    <Choice value="27" hotkey=" "/>
+    <Choice value="26" hotkey=" "/>
+    <Choice value="25" hotkey=" "/>
+    <Choice value="24" hotkey=" "/>
+    <Choice value="23" hotkey=" "/>
+    <Choice value="22" hotkey=" "/>
+    <Choice value="21" hotkey=" "/>
+    <Choice value="20" hotkey=" "/>
+    <Choice value="19" hotkey=" "/>
+    <Choice value="18" hotkey=" "/>
+    <Choice value="17" hotkey=" "/>
+    </View>
+    </Choices>
+    <View style="display: flex">
+    <Header size="5" value="Disease" style="word-spacing:20px;font-weight:lighter;color:blue" />
+	<Choices name="disease" toName="image"
+             choice="single" showInline="true" required="true"
+             requiredMessage="Select Disease">
+		<Choice value="healthy"/>
+      	<Choice value="stable"/>
+		<Choice value="unstable"/>
+		<Choice value="very unstable"/>
+    </Choices>
+  	</View>
+	<View style="display: flex;">
+	<Header size="5" value="Probing" style="word-spacing:20px;font-weight:lighter;color:blue" />
+  	<Text name="t1" value="Distal-facial" />
+   	<Number name="d1" toName="image" min="0" max="10" required="true" requiredMessage="Enter probing distal-facial"/>
+  	<Text name="t2" value="Mid-facial" />
+   	<Number name="d2" toName="image" min="0" max="10" required="true" requiredMessage="Enter probing mid-facial"/>
+  	<Text name="t3" value="Mesial-facial" />
+   	<Number name="d3" toName="image" min="0" max="10" required="true" requiredMessage="Enter probing mesial-facial"/>
+  	<Text name="t4" value="Distal-lingual" />
+   	<Number name="d4" toName="image" min="0" max="10" required="true" requiredMessage="Enter probing distal-lingual"/>
+  	<Text name="t5" value="Mid-lingual" />
+   	<Number name="d5" toName="image" min="0" max="10" required="true" requiredMessage="Enter probing mid-lingual"/>
+  	<Text name="t6" value="Mesial-lingual" />
+   	<Number name="d6" toName="image" min="0" max="10" required="true" requiredMessage="Enter probing mesial-lingual"/>
+  </View>
+</View>
