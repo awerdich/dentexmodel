@@ -10,25 +10,41 @@ a starting point for computer vision projects.
 All frameworks, libraries and data sets are open source and publicly available.
 Some common tasks included here are:
 
-- [Image Classification](#image-classification)
-- [Object Detection](#object-detection)
-- [Instance Segmentation](#instance-segmentation)
-- [Gradient-weighted Class Activation Mapping](#grad-cam)
+- [Image Classification](./notebooks/classification)
+- [Object Detection](./notebooks/detect-segment)
+- [Instance Segmentation](./notebooks/detect-segment)
+- [Gradient-weighted Class Activation Mapping](./notebooks/classification/10_explainable_ai.ipynb)
+
+## The Dentex Challenge 2023
+
+The Dentex Challenge 2023 aims to provide insights into the effectiveness of AI in 
+dental radiology analysis and its potential to improve dental practice by comparing 
+frameworks that simultaneously point out abnormal teeth with dental enumeration and 
+associated diagnosis on panoramic dental X-rays.
+The dataset comprises panoramic dental X-rays obtained from three 
+different institutions using standard clinical conditions but varying equipment and imaging protocols, 
+resulting in diverse image quality reflecting heterogeneous clinical practice. 
+It includes X-rays from patients aged 12 and above, 
+randomly selected from the hospital's database to ensure patient privacy and confidentiality.
+A detailed description of the data and the annotation protocol 
+can be found on the [Dentex Challenge](https://dentex.grand-challenge.org/) website.
+The data set is publicly available for download from the [Zenodo](https://zenodo.org/records/7812323#.ZDQE1uxBwUG) 
+open-access data repository.
 
 ## Install locally with Docker
 The most convenient way to get started with this repository is to run the 
 code examples in a [Docker](https://docs.docker.com/) container.
 
 The Dockerfile and docker-compose.yml files included in the repository can be 
-used to create a Docker image and 
-run a Docker container, which together provide a reproducible Python development environment for computer
+used to create a Docker image and run a Docker container, which together provide a 
+reproducible Python development environment for computer
 vision experimentation. This environment includes Ubuntu 22.04, Python 3.10.12, PyTorch 2.2 and
-Tensorflow 2.15 frameworks with NVIDIA CUDA 12.1, and a Jupyter Lab server, making it 
+Tensorflow 2.15 with NVIDIA CUDA 12.1, and a Jupyter Lab server, making it 
 well-suited for training and evaluating custom models. 
 
 <p float="left">
-    <img style="vertical-align: top" src="./images/jupyterlab1.gif" width="40%" />
-    <img style="vertical-align: top" src="./images/tensorboard.gif" width="40%" />
+    <img style="vertical-align: top" src="./images/jupyterlab_segment.png" width="50%" />
+    <img style="vertical-align: top" src="./images/tensorboard_segment_light.png" width="40%" />
 </p>
 
 Here's a step-by-step guide on how to use this setup:
@@ -98,7 +114,10 @@ Additionally, the tool includes a powerful machine learning interface that can b
 active learning, supervised learning, and many other training techniques.
 
 1. Multi-type annotations: Label Studio supports multiple types of annotations, including labeling for audio, video, images, text, and time series data. These annotations can be used for tasks such as object detection, semantic segmentation, and text classification among others.
-2. Customizable: You can customize the labeling interface to suit your needs by using the simple configuration system provided by Label Studio.
+2. Customizable: The label interface can be customized using a configuration API.
+
+<img src="./images/LabelInterface.png" width="70%" height="70%"/>
+
 3. Machine Learning backend: Label Studio allows integration with machine learning models. You can pre-label data using model predictions and then manually adjust the results.
 4. Data Import and Export: Label Studio supports various data sources for import and export. You can import data from Amazon S3, Google Cloud Storage, or a local file system, and export it in popular formats like COCO, Pascal VOC, or YOLO.
 5. Collaboration: It supports multiple users, making it suitable for collaborative projects.
